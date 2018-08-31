@@ -1,12 +1,19 @@
 const Space = require('../models/space')
 
 exports.getAllSpaces= (request,response) =>{
-   
-   var query = Space.find();
-   if(request.query.search)
+   var limit = parseInt(request.query.limit) || 10
+    
+   var query = Space.find().limit(limit);
+   console.log(request.query)
+   if(request.query.name)
     {
-        query.where({ name : request.query.search})
+        query.where({ name : request.query.name})
     }
+    if(request.query.city)
+    {
+        query.where('address.city').equals(request.query.city)
+    }
+    
     query.exec((error, space) => {
         if (error)
             response.json({
