@@ -15,6 +15,6 @@ var UserSchema = new mongoose.Schema({
     updatedAt: Date,
 })
 
-const User = mongoose.model('User', UserSchema);
+const User = mongoose.model('User', userSchema);
 
 module.exports = User;

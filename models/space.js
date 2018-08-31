@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-var SpaceSchema = new mongoose.Schema({
+var spaceSchema = new mongoose.Schema({
     name: String,
     slug: String,
     ameneties: String,
@@ -43,6 +43,6 @@ var SpaceSchema = new mongoose.Schema({
 
 })
 
-const Space = mongoose.model('Space', SpaceSchema);
+const Space = mongoose.model('Space', spaceSchema);
 
 module.exports = Space;
