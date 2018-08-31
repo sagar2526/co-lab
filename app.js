@@ -15,6 +15,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+mongoose.connect('mongodb://localhost:27017/co-lab')
 mongoose.connection.on('error', (error) => console.error(error))
 mongoose.connection.on('open', () => console.log("success in connecting to mongodb"))
 
