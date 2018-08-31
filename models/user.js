@@ -4,15 +4,15 @@ var UserSchema = new mongoose.Schema({
     username:	String,
     email: String,
     password: String,
-    password-expiry: timeStamp,
-    first-name: String,
-    middle-name: String,
-    last-name: String,
+    passwordExpiry: timeStamp,
+    firstName: String,
+    middleName: String,
+    lastName: String,
     facebook: String,
     google: String,
     token: Array,
-    createdAt: timeStamp,
-    updatedAt: timeStamp,
+    createdAt: Date,
+    updatedAt: Date,
 })
 
 const User = mongoose.model('User', UserSchema);
