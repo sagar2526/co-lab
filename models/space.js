@@ -6,7 +6,7 @@ var SpaceSchema = new mongoose.Schema({
     ameneties: String,
     size: Number,
     address:{
-      line[]: String,
+      line: Array,
       area: String,
       pincode: Number,
       city: String,
