@@ -3,11 +3,14 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const mongoose = require('mongoose')
+const bodyParser = require('body-parser');
+
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 const spaceController = require('./controllers/space')
+const userController = require('./controllers/user')
 
 
 var app = express();
@@ -31,5 +34,9 @@ app.get('/api/v1/spaces', spaceController.getAllSpaces)
 app.post('/api/v1/spaces', spaceController.postNewSpaces)
 app.put('/api/v1/spaces/:id', spaceController.updateSpacesById)
 app.delete('/api/v1/spaces/:id', spaceController.delSpacesById)
+app.get('/api/v1/users', userController.getAllUsers)
+app.post('/api/v1/users', userController.postNewUsers)
+app.put('/api/v1/users/:id', userController.updateUsersById)
+app.delete('/api/v1/users/:id', userController.delUsersById)
 
 module.exports = app;

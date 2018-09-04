@@ -4,7 +4,7 @@ var UserSchema = new mongoose.Schema({
     username:	String,
     email: String,
     password: String,
-    passwordExpiry: timeStamp,
+    passwordExpiry: Date,
     firstName: String,
     middleName: String,
     lastName: String,
@@ -15,6 +15,6 @@ var UserSchema = new mongoose.Schema({
     updatedAt: Date,
 })
 
-const User = mongoose.model('User', userSchema);
+const User = mongoose.model('User', UserSchema);
 
 module.exports = User;
