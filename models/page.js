@@ -1,4 +1,4 @@
-const mongoose = require('mongoose')
+ const mongoose = require('mongoose')
 
 var pageSchema = new mongoose.Schema({
     name: String,
@@ -6,6 +6,6 @@ var pageSchema = new mongoose.Schema({
     slug: String
 })
 
-const Page = mongoose.model('Pages', pagesSchema);
+const Page = mongoose.model('Pages', pageSchema);
 
 module.exports = Page;
